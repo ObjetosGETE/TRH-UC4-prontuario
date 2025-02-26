@@ -1,0 +1,231 @@
+.body-game {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+.title-game {
+  font-family: "Inter", serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+  color: #2A2A2A;
+  font-size: 30px;
+  line-height: 37px;
+
+}
+
+.btn-close-obj {
+  background: #7da3c6;
+  border: 5px solid #06415e;
+  color: white;
+  border-radius: 10px;
+  padding: 10px 30px;
+  font-size: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.84);
+  transition: all 0.3s ease;
+  font-weight: bold;
+  margin-top: 2%;
+}
+
+.btn-close-obj:hover {
+  background: #06415e;
+  color: white;
+  border: 5px solid #7da3c6;
+  transform: scale(0.9);
+}
+
+.header-modal-game {
+  background-color: #ffbd59;
+}
+
+.modal-title {
+  font-family: 'Roboto', sans-serif;
+  color: #2A2A2A;
+  font-size: 30px;
+  line-height: 37px;
+  font-weight: bold;
+  font-style: normal;
+}
+
+.textoFeedbackFinal {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5rem;
+  color: #2A2A2A;
+  line-height: 32px;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.modal-footer {
+  align-items: center;
+  text-align: center;
+}
+
+.modal-content {
+  background-color: #daf2f2;
+}
+
+
+.modal-body {
+  position: relative;
+  flex: 1 1 auto;
+  padding: 1rem;
+  font-size: 23px;
+  margin: 2%;
+  margin-top: 4%;
+  text-align: center;
+}
+
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+#zonaDeSoltar {
+	background-image: url(../img/pasta_vazia.png);
+	background-repeat: no-repeat;
+	width: 24%;
+	height: 30%;
+	top: 809px;
+	right: 244px;
+}
+
+/*****************************************************************/
+/******************* posição dos documentos**********************/
+/***************************************************************/
+
+.doc1 {
+  top: 43px;
+  left: 52px;
+transform: rotate(-3deg);
+}
+
+.doc2 {
+  top: 287px;
+  left: 52px;
+transform: rotate(3deg);
+}
+
+.doc3 {
+  top: 476px;
+  left: 52px;
+transform: rotate(-3deg);
+}
+
+.doc4 {
+  top: 690px;
+  left: 52px;
+transform: rotate(-3deg);
+}
+
+.doc5 {
+  top: 872px;
+  left: 52px;
+transform: rotate(3deg);
+}
+
+.doc6 {
+  top: 43px;
+  left: 282px;
+transform: rotate(-3deg);
+}
+
+.doc7 {
+  top: 287px;
+  left: 282px;
+transform: rotate(3deg);
+}
+
+.doc8 {
+  top: 476px;
+  left: 282px;
+transform: rotate(-3deg);
+}
+
+.doc9 {
+  top: 690px;
+  left: 282px;
+transform: rotate(3deg);
+}
+
+.doc10 {
+  top: 872px;
+  left: 282px;
+transform: rotate(-3deg);
+}
+
+.doc11 {
+  top: 43px;
+  left: 492px;
+transform: rotate(3deg);
+}
+
+.doc12 {
+  top: 287px;
+  left: 492px;
+transform: rotate(-3deg);
+}
+
+.doc13 {
+  top: 476px;
+  left: 492px;
+transform: rotate(3deg);
+}
+
+.doc14 {
+  top: 195px;
+  left: 694px;
+transform: rotate(-3deg);
+}
+
+.doc15 {
+  top: 510px;
+  left: 688px;
+transform: rotate(3deg);
+}
+
+
+
+/**********************************************************/
+/******************* vire o celular ***********************/
+/**********************************************************/
+
+.p-paisagem {
+  color: white;
+  text-align: center;
+}
+
+.img-paisagem {
+  max-width: 70% !important;
+  height: auto;
+  display: block;
+}
+
+.modo-smart {
+  display: none;
+}
+
+@media only screen and (orientation: portrait) {
+  .modo-smart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #5b2885;
+    z-index: 9999999999999999999;
+  }
+}

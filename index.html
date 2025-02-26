@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posicione a vírgula</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <div class="body-game">
+        <div class="tela-interacao">
+
+          
+            <div class="bodyJogo">
+            
+                <div class="areaDocumentos position-relative">
+                    <div class="position-absolute doc doc1"> <img src="assets/img/doc_01.png" alt="" class="img-doc w-100"></div>
+                    <div class="position-absolute doc doc2"> <img src="assets/img/doc_02.png" alt="" class="img-doc w-100"></div>
+                    <div class="position-absolute doc doc3"> <img src="assets/img/doc_03.png" alt="" class="img-doc w-100"></div>
+                    <div class="position-absolute doc doc4"> <img src="assets/img/doc_04.png" alt="" class="img-doc w-100"></div>
+                    <div class="position-absolute doc doc5"> <img src="assets/img/doc_05.png" alt="" class="img-doc w-100"></div>
+                    <div class="position-absolute doc doc6"> <img src="assets/img/doc_06.png" alt="" class="img-doc w-100"></div>
+                    <div class="position-absolute doc doc7"> <img src="assets/img/doc_07.png" alt="" class="img-doc w-100"></div>
+                    <div class="position-absolute doc doc8"> <img src="assets/img/doc_08.png" alt="" class="img-doc w-100"></div>
+                    <div class="position-absolute doc doc9"> <img src="assets/img/doc_09.png" alt="" class="img-doc w-100"></div>
+                    <div class="position-absolute doc doc10"><img src="assets/img/doc_10.png" alt="" class="img-doc w-100"></div>
+                    <div class="position-absolute doc doc11"><img src="assets/img/doc_11.png" alt="" class="img-doc w-100"></div>
+                    <div class="position-absolute doc doc12"><img src="assets/img/doc_12.png" alt="" class="img-doc w-100"></div>
+                    <div class="position-absolute doc doc13"><img src="assets/img/doc_13.png" alt="" class="img-doc w-100"></div>
+                    <div class="position-absolute doc doc14"><img src="assets/img/doc_14.png" alt="" class="img-doc w-100"></div>
+                    <div class="position-absolute doc doc15"><img src="assets/img/doc_15.png" alt="" class="img-doc w-100"></div>
+                </div>
+                <div id="zonaDeSoltar" class="zona-soltar position-absolute"></div>
+                <img src="assets/img/BG.jpg" alt="background do jogo mesa de escritório vista superior" class="img-bg"></div>
+            </div>
+
+        </div>
+        <!-- Modal Feedback -->
+        <div id="modalFeedback" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header header-modal-game">
+                        <h5 class="modal-title">Parabéns</h5>
+                    </div>
+                    <div class="modal-body">
+                        <p class="textoFeedbackFinal">Ótimo! Você posicionou corretamente as vírgulas! </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary btn-close-obj" data-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Tela final -->
+
+        <div class="modal fade" id="modalFimDoJogo" tabindex="-1" aria-labelledby="fimDoJogoLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header header-modal-game">
+                        <h5 class="modal-title" id="fimDoJogoLabel">Fim do
+                            Jogo</h5>
+                    </div>
+                    <div class="modal-body">
+                        <p class="textoFeedbackFinal"> <strong>Concluído com sucesso! </strong><br>
+                            Perfeito! Você acertou todas as vírgulas nas frases. Parabéns! </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary btn-close-obj" data-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- força o usuário a virar a tela do celular -->
+
+    <div class="modo-smart">
+        <div class="text-center">
+            <p class="p-paisagem text-center">
+                <img src="assets/img/vire.gif" class="img-fluid img-paisagem d-inline-block"><br>
+                <strong>Por favor, gire o aparelho para o modo
+                    paisagem.</strong>
+            </p>
+        </div>
+    </div>
+
+    <audio id="audio-acerto">
+        <source src="assets/audio/acerto.mp3" type="audio/mpeg">
+    </audio>
+
+    <audio id="audio-errado">
+        <source src="assets/audio/erro.mp3" type="audio/mpeg">
+    </audio>
+
+    <audio id="audio-clique">
+        <source src="assets/audio/clique.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
