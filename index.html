@@ -4,49 +4,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Posicione a vírgula</title>
+    <title>Clique e arraste os documentos</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
 <body>
-    <div class="body-game">
+    <div class="body-game conteudo">
         <div class="tela-interacao">
 
-          
             <div class="bodyJogo">
             
                 <div class="areaDocumentos position-relative">
-                    <div class="position-absolute doc doc1"> <img src="assets/img/doc_01.png" alt="" class="img-doc w-100"></div>
-                    <div class="position-absolute doc doc2"> <img src="assets/img/doc_02.png" alt="" class="img-doc w-100"></div>
-                    <div class="position-absolute doc doc3"> <img src="assets/img/doc_03.png" alt="" class="img-doc w-100"></div>
-                    <div class="position-absolute doc doc4"> <img src="assets/img/doc_04.png" alt="" class="img-doc w-100"></div>
-                    <div class="position-absolute doc doc5"> <img src="assets/img/doc_05.png" alt="" class="img-doc w-100"></div>
-                    <div class="position-absolute doc doc6"> <img src="assets/img/doc_06.png" alt="" class="img-doc w-100"></div>
-                    <div class="position-absolute doc doc7"> <img src="assets/img/doc_07.png" alt="" class="img-doc w-100"></div>
-                    <div class="position-absolute doc doc8"> <img src="assets/img/doc_08.png" alt="" class="img-doc w-100"></div>
-                    <div class="position-absolute doc doc9"> <img src="assets/img/doc_09.png" alt="" class="img-doc w-100"></div>
-                    <div class="position-absolute doc doc10"><img src="assets/img/doc_10.png" alt="" class="img-doc w-100"></div>
-                    <div class="position-absolute doc doc11"><img src="assets/img/doc_11.png" alt="" class="img-doc w-100"></div>
-                    <div class="position-absolute doc doc12"><img src="assets/img/doc_12.png" alt="" class="img-doc w-100"></div>
-                    <div class="position-absolute doc doc13"><img src="assets/img/doc_13.png" alt="" class="img-doc w-100"></div>
-                    <div class="position-absolute doc doc14"><img src="assets/img/doc_14.png" alt="" class="img-doc w-100"></div>
-                    <div class="position-absolute doc doc15"><img src="assets/img/doc_15.png" alt="" class="img-doc w-100"></div>
+                    <div class="position-absolute doc doc1 c"> <img src="assets/img/doc_01.png" alt="Cópia dos documentos pessoais" class="img-doc w-100"></div>
+                    <div class="position-absolute doc doc2 c"> <img src="assets/img/doc_02.png" alt="Via de declaração de encargos de família para fins de Imposto de Renda" class="img-doc w-100"></div>
+                    <div class="position-absolute doc doc3 i"> <img src="assets/img/doc_03.png" alt="Diploma acadêmico" class="img-doc w-100"></div>
+                    <div class="position-absolute doc doc4 c"> <img src="assets/img/doc_04.png" alt="Via do contrato de trabalho " class="img-doc w-100"></div>
+                    <div class="position-absolute doc doc5 c"> <img src="assets/img/doc_05.png" alt="Via do termo de opção pelo vale-transporte " class="img-doc w-100"></div>
+                    <div class="position-absolute doc doc6 i"> <img src="assets/img/doc_06.png" alt="Via do termo de opção pelo vale-transporte " class="img-doc w-100"></div>
+                    <div class="position-absolute doc doc7 c"> <img src="assets/img/doc_07.png" alt="Solicitação de vaga pelo requisitante " class="img-doc w-100"></div>
+                    <div class="position-absolute doc doc8 c"> <img src="assets/img/doc_08.png" alt="Termo de confidencialidade " class="img-doc w-100"></div>
+                    <div class="position-absolute doc doc9 i"> <img src="assets/img/doc_09.png" alt="Certidão negativa de ações trabalhistas " class="img-doc w-100"></div>
+                    <div class="position-absolute doc doc10 c"><img src="assets/img/doc_10.png" alt="Via do Atestado de Saúde Ocupacional – ASO (exame admissional) " class="img-doc w-100"></div>
+                    <div class="position-absolute doc doc11 c"><img src="assets/img/doc_11.png" alt="Currículo profissional " class="img-doc w-100"></div>
+                    <div class="position-absolute doc doc12 i"><img src="assets/img/doc_12.png" alt="Certificado de reservista " class="img-doc w-100"></div>
+                    <div class="position-absolute doc doc13 c"><img src="assets/img/doc_13.png" alt="Via do termo de responsabilidade para o salário-família " class="img-doc w-100"></div>
+                    <div class="position-absolute doc doc14 c"><img src="assets/img/doc_14.png" alt="Ficha registro " class="img-doc w-100"></div>
+                    <div class="position-absolute doc doc15 i"><img src="assets/img/doc_15.png" alt="Comprovante de quitação eleitoral " class="img-doc w-100"></div>
                 </div>
                 <div id="zonaDeSoltar" class="zona-soltar position-absolute"></div>
                 <img src="assets/img/BG.jpg" alt="background do jogo mesa de escritório vista superior" class="img-bg"></div>
             </div>
 
         </div>
+
+        <div id="modalIntroducao" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header header-modal-game">
+                  <h5 class="modal-title">Vamos organizar este prontuário?</h5>
+                </div>
+                <div class="modal-body">
+                  <p class="textoFeedbackFinal">
+                    Selecione os documentos corretos para realizar a contratação deste colaborador!<br>
+                    Clique sobre os documentos para armazená-los na pasta!<br>
+                    Mas cuidado, pois há documentos que não são necessários.
+                  </p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary btn-close-obj" data-dismiss="modal">Jogar!</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
         <!-- Modal Feedback -->
-        <div id="modalFeedback" class="modal fade" tabindex="-1" role="dialog">
+        <div id="modalFeedbackNegativa" class="modal fade" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header header-modal-game">
-                        <h5 class="modal-title">Parabéns</h5>
+                        <h5 class="modal-title">Ops! Tente novamente.</h5>
                     </div>
                     <div class="modal-body">
-                        <p class="textoFeedbackFinal">Ótimo! Você posicionou corretamente as vírgulas! </p>
+                        <p class="textoFeedbackFinal">Este documento não é necessário para o prontuário.</p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary btn-close-obj" data-dismiss="modal">Fechar</button>
@@ -77,6 +97,7 @@
     </div>
     <!-- força o usuário a virar a tela do celular -->
 
+   <!--
     <div class="modo-smart">
         <div class="text-center">
             <p class="p-paisagem text-center">
@@ -86,6 +107,7 @@
             </p>
         </div>
     </div>
+    -->
 
     <audio id="audio-acerto">
         <source src="assets/audio/acerto.mp3" type="audio/mpeg">

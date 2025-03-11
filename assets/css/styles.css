@@ -91,12 +91,11 @@
 #zonaDeSoltar {
 	background-image: url(../img/pasta_vazia.png);
 	background-repeat: no-repeat;
-	width: 24%;
-	height: 30%;
-	top: 809px;
-	right: 244px;
+	width: 305px;
+	height: 253px;
+	top: 816px;
+	right: 498px;
 }
-
 /*****************************************************************/
 /******************* posição dos documentos**********************/
 /***************************************************************/
@@ -197,6 +196,8 @@ transform: rotate(3deg);
 /******************* vire o celular ***********************/
 /**********************************************************/
 
+/*
+
 .p-paisagem {
   color: white;
   text-align: center;
@@ -229,3 +230,14 @@ transform: rotate(3deg);
     z-index: 9999999999999999999;
   }
 }
+
+
+.conteudo {
+  width: 1920px;
+  height: 1080px;
+  position: fixed;
+  left: calc(50% - 1920px / 2);
+  top: calc(50% - 1080px / 2);
+  margin: auto;
+  overflow: hidden;
+} */
