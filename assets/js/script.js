@@ -3,6 +3,11 @@ $(document).ready(function() {
   //  resizeBodyConteudo();
     $("#modalIntroducao").modal("show");
 
+    $('.btn-respostas').on( "click", function() {
+
+     $('.tela-1').addClass('d-none');
+     $('.tela-2').removeClass('d-none');
+    });
     let correctCount = 0;
     const totalCorrect = $(".doc.c").length;
 
@@ -66,6 +71,9 @@ $(document).ready(function() {
       }
     });
   });
+  
+
+
   
 
 //   function escalaProporcao(largura, altura) {
