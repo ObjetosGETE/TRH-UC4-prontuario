@@ -38,7 +38,7 @@
 .body-modal-jogo {
   background-color: #f1f9fa;
   width: auto;
-  height: 248.2px;
+  height: 274px;
   border-radius: 10px;
 }
 
@@ -47,22 +47,26 @@
 }
 
 .p-resposta {
-  background-color: #bf3475;
-  width: 370px;
-  height: 100px;
-  text-align: center;
-  align-content: center;
-  align-items: center;
-  padding: 5px;
-  color: white;
-  font-size: 20px;
-
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	background-color: #bf3475;
+	width: 333.3px;
+	height: 94.8px;
+	text-align: center;
+	align-content: center;
+	align-items: center;
+	padding: 5px;
+	color: white;
+	font-size: 19px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.areaRepostas.position-absolute {
+.area-respostas.position-absolute {
   top: 54.6px;
   left: 506.6px;
+}
+
+.area-repostas-mobile {
+	background-color: #c0a379;
+	padding: 13px;
 }
 
 .img-doc-final {
@@ -236,10 +240,7 @@
   width: 185.8px;
 }
 
-/* -------------------------------------------------------
-   MODAIS RESPONSIVAS
-   ---------------------------------------------------- */
-/* -------- MODAIS RESPONSIVAS (desktop) -------- */
+
 .modal-intro-dialog {
   max-width: 750px;
 }
@@ -280,6 +281,21 @@
 }
 
 /* Regras específicas para MOBILE */
+
+.sem-bolinha {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.lista-respostas {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
 @media (max-width: 767px) {
   .tela-mobile {
     width: 361.4px;
@@ -303,6 +319,18 @@
     z-index: 1;
     width: 100%;
     padding-top: 30px;
+  }
+
+  .carousel {
+    position: relative;
+    height: 500px;
+  }
+
+  .carousel-inner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: 508.6px;
   }
 
   #carouselDocumentos .doc {
@@ -347,11 +375,15 @@
     background-color: #3875b7;
     border-radius: 50%;
     margin: 0 5px;
-    opacity: 0.7;
+    opacity: 0.5;
     box-shadow: inset 0 0 3px #ffffffaa;
   }
 
   .indicador-carrosel li.active {
+    opacity: 1;
+  }
+
+  .carousel-control-next, .carousel-control-prev {
     opacity: 1;
   }
 

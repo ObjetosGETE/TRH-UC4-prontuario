@@ -40,12 +40,26 @@
   }
 
   function openFinalModal() {
+    if (layoutMode === "desktop") {
+      $(".btn-respostas-responsivo").removeClass("d-none");
+      $(".btn-respostas-mobile").addClass("d-none");
+    } else {
+      $(".btn-respostas-responsivo").addClass("d-none");
+      $(".btn-respostas-mobile").removeClass("d-none");
+    }
     $("#modalFimDoJogo").modal("show");
   }
+  
 
-  function mostrarTelaDeConferencia() {
+  function  mostrarTelaDeConferenciaReponsiva() {
     $(".tela-1").addClass("d-none");
     $(".tela-2").removeClass("d-none");
+  }
+
+  
+  function  mostrarTelaDeConferenciaMobile() {
+    $(".tela-mobile").addClass("d-none");
+    $(".tela-resposta-mobile").removeClass("d-none");
   }
 
   function validateDesktop($doc) {
@@ -105,7 +119,8 @@
     },
   });
 
-  $(".conferir").on("click", mostrarTelaDeConferencia);
+  $(".btn-respostas-responsivo").on("click", mostrarTelaDeConferenciaReponsiva);
+  $(".btn-respostas-mobile").on("click", mostrarTelaDeConferenciaMobile);
 
   $(window).on("resize", handleResize);
   handleResize();
@@ -126,9 +141,11 @@
       $(".tela-responsiva").css("transform", "scale(1)");
       $(".tela-mobile").removeClass("d-none");
       $(".tela-responsiva").addClass("d-none");
+      $(".tela-2").addClass("d-none");
     } else {
       applyScale();
       $(".tela-mobile").addClass("d-none");
+      $(".tela-resposta-mobile").addClass("d-none");
       $(".tela-responsiva").removeClass("d-none");
     }
 

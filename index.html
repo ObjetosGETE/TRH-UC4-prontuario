@@ -60,7 +60,7 @@
                     <div class="tela-2 d-none">
                         <div class="position-relativo">
 
-                            <div class="areaRepostas position-absolute">
+                            <div class="area-respostas position-absolute">
 
                                 <img src="assets/img/pasta_docs.png" alt="pasta com documentos" class="img-doc-final">
 
@@ -108,7 +108,7 @@
                     </div>
                 </div>
 
-                <div class="tela-mobile position-relative">
+                <div class="tela-mobile position-relative d-none">
                     <img src="assets/img/BG_mobile.jpg" alt="background" class="img-bg">
                     <div class="div-carrossel ">
                         <div id="carouselDocumentos" class="carousel slide" data-ride="false">
@@ -201,6 +201,45 @@
                         </div>
                     </div>
                 </div>
+                <div class="tela-resposta-mobile d-none">
+       
+                    <div class="area-repostas-mobile">
+                        <ul class="lista-respostas sem-bolinha">
+                            <li class="div-resposta-mobile">
+                                <p class="p-resposta">Cópia dos documentos pessoais</p>
+                            </li>
+                            <li class="div-resposta-mobile">
+                                <p class="p-resposta">Via de declaração de encargos de família para fins de Imposto de
+                                    Renda</p>
+                            </li>
+                            <li class="div-resposta-mobile">
+                                <p class="p-resposta">Via do contrato de trabalho</p>
+                            </li>
+                            <li class="div-resposta-mobile">
+                                <p class="p-resposta">Via do termo de opção pelo vale-transporte</p>
+                            </li>
+                            <li class="div-resposta-mobile">
+                                <p class="p-resposta">Solicitação de vaga pelo requisitante</p>
+                            </li>
+                            <li class="div-resposta-mobile">
+                                <p class="p-resposta">Termo de confidencialidade</p>
+                            </li>
+                            <li class="div-resposta-mobile">
+                                <p class="p-resposta">Via do Atestado de Saúde Ocupacional – ASO (exame admissional)</p>
+                            </li>
+                            <li class="div-resposta-mobile">
+                                <p class="p-resposta">Currículo profissional</p>
+                            </li>
+                            <li class="div-resposta-mobile">
+                                <p class="p-resposta">Via do termo de responsabilidade para o salário-família</p>
+                            </li>
+                            <li class="div-resposta-mobile">
+                                <p class="p-resposta">Ficha registro</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
             </div>
         </div>
     </div>
@@ -242,25 +281,30 @@
         </div>
     </div>
 
-    <!-- Modal Tela final -->
+   <!-- Modal Tela final -->
+<div id="modalFimDoJogo" class="modal fade" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-fim-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="body-modal-jogo">
+          <div class="modal-header-jogo">
+            <p class="textoFeedbackFinal">
+              Você selecionou a lista correta de documentos necessários ao prontuário! Vamos conferi-la!
+            </p>
 
-    <div id="modalFimDoJogo" class="modal fade" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-fim-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="body-modal-jogo">
-                    <div class="modal-header-jogo">
-                        <p class="textoFeedbackFinal">
-                            Você selecionou a lista correta de documentos necessários ao prontuário! Vamos conferi-la!
-                        </p>
-                        <button type="button" class="btn-respostas btn btn-close-obj" data-dismiss="modal">
-                            <img src="assets/img/bt_fechar.png" alt="botão fechar"
-                                class="img-btn-fechar conferir fluid-img">
-                        </button>
-                    </div>
-                </div>
-            </div>
+            <button type="button" class="btn-respostas-responsivo btn btn-close-obj" data-dismiss="modal">
+              <img src="assets/img/bt_fechar.png" alt="botão fechar" class="img-btn-fechar fluid-img">
+            </button>
+  
+            <button type="button" class="btn-respostas-mobile btn btn-close-obj d-none" data-dismiss="modal">
+              <img src="assets/img/bt_fechar.png" alt="botão fechar" class="img-btn-fechar fluid-img">
+            </button>
+  
+          </div>
         </div>
+      </div>
     </div>
+  </div>
+  
 
     <audio id="audio-acerto">
         <source src="assets/audio/acerto.mp3" type="audio/mpeg">
