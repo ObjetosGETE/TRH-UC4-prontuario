@@ -1,155 +1,154 @@
-(function ($) {
-  "use strict";
+let rodadaAtual = 1;
+const totalRodadas = 3;
+let corretosPorRodada = {};
+let acertosNaRodada = 0;
+let primeiraImagemAtualizada = false;
 
-  const BREAKPOINT = 767;
-
-  let layoutMode = getLayout();
-  let correctCount = 0;
-  let totalCorrect = countCorrectDocs();
-  let gameStarted = false;
-
-  function getLayout() {
-    return $(window).width() <= BREAKPOINT ? "mobile" : "desktop";
-  }
-
-  function countCorrectDocs() {
-    return layoutMode === "desktop" ? $(".doc.c").length : $(".doc.cm").length;
-  }
-
-  function resetGame() {
-    correctCount = 0;
-    layoutMode = getLayout();
-    totalCorrect = countCorrectDocs();
-    gameStarted = false;
-
-    $(".doc").show().draggable("enable");
-    $(".zona-soltar-responsiva").css(
-      "background-image",
-      "url('assets/img/pasta_vazia.png')"
-    );
-    $(".img-pasta-mobile").attr("src", "assets/img/pasta_vazia.png");
-  }
-
-  function updateFolderImageIfFirstDoc() {
-    if (correctCount !== 0) return;
-    $(".zona-soltar-responsiva").css(
-      "background-image",
-      "url('assets/img/pasta_docs.png')"
-    );
-    $(".img-pasta-mobile").attr("src", "assets/img/pasta_docs.png");
-  }
-
-  function openFinalModal() {
-    if (layoutMode === "desktop") {
-      $(".btn-respostas-responsivo").removeClass("d-none");
-      $(".btn-respostas-mobile").addClass("d-none");
-    } else {
-      $(".btn-respostas-responsivo").addClass("d-none");
-      $(".btn-respostas-mobile").removeClass("d-none");
-    }
-    $("#modalFimDoJogo").modal("show");
-  }
-  
-
-  function  mostrarTelaDeConferenciaReponsiva() {
-    $(".tela-1").addClass("d-none");
-    $(".tela-2").removeClass("d-none");
-  }
-
-  
-  function  mostrarTelaDeConferenciaMobile() {
-    $(".tela-mobile").addClass("d-none");
-    $(".tela-resposta-mobile").removeClass("d-none");
-  }
-
-  function validateDesktop($doc) {
-    if ($doc.hasClass("i")) {
-      $("#audio-errado")[0]?.play();
-      $("#modalFeedbackNegativa").modal("show");
-      return;
-    }
-    $("#audio-acerto")[0]?.play();
-    correctCount++;
-    if (correctCount === totalCorrect) setTimeout(openFinalModal, 500);
-  }
-
-  function validateMobile($doc) {
-    if ($doc.hasClass("im")) {
-      $("#audio-errado")[0]?.play();
-      $("#modalFeedbackNegativa").modal("show");
-      return;
-    }
-    $("#audio-acerto")[0]?.play();
-    correctCount++;
-    if (correctCount === totalCorrect) setTimeout(openFinalModal, 500);
-  }
-
-  function validateDoc($doc) {
-    layoutMode === "desktop" ? validateDesktop($doc) : validateMobile($doc);
-  }
-
-  $(".doc").draggable({
-    helper: "clone",
-    appendTo: "body",
-    cursor: "move",
-    start: (e, ui) =>
-      ui.helper.css({
-        position: "fixed",
-        left: e.pageX - ui.helper.width() / 2,
-        top: e.pageY - ui.helper.height() / 2,
-        zIndex: 10000,
-        pointerEvents: "none",
-      }),
-    drag: (e, ui) =>
-      ui.helper.css({
-        left: e.pageX - ui.helper.width() / 2,
-        top: e.pageY - ui.helper.height() / 2,
-      }),
-  });
+function iniciarJogoDocumentos() {
+  corretosPorRodada = {
+    1: $(".btn-doc.rodada-1.c").length,
+    2: $(".btn-doc.rodada-2.c").length,
+    3: $(".btn-doc.rodada-3.c").length,
+  };
 
   $(".zonaDeSoltar").droppable({
-    accept: (el) => $(el).is(".doc:visible"),
-    hoverClass: "zona-hover",
-    drop: (e, ui) => {
-      if (!ui.draggable.is(":visible")) return;
-      gameStarted = true;
-      ui.draggable.hide().draggable("disable");
-      updateFolderImageIfFirstDoc();
-      validateDoc(ui.draggable);
+    accept: ".btn-doc",
+    drop: function (event, ui) {
+      const item = ui.draggable;
+
+      if (item.hasClass("usado")) return;
+
+      if (item.hasClass("c")) {
+        $("#audio-acerto")[0].play();
+        item.addClass("usado").fadeOut();
+        acertosNaRodada++;
+
+        if (!primeiraImagemAtualizada) {
+          $(".zona-soltar-responsiva").css(
+            "background-image",
+            "url('assets/img/pasta_docs.png')"
+          );
+          primeiraImagemAtualizada = true;
+          console.log("Imagem da pasta atualizada para pasta_docs.png");
+        }
+
+        if (acertosNaRodada === corretosPorRodada[rodadaAtual]) {
+          if (rodadaAtual < totalRodadas) {
+            setTimeout(() => {
+              $("#modalNovaRodada").modal("show");
+              setTimeout(() => {
+                $("#modalNovaRodada").modal("hide");
+                avancarRodada();
+              }, 9000);
+            }, 900);
+          } else {
+            setTimeout(() => {
+              avancarRodada();
+            }, 2000);
+          }
+        }
+      } else if (item.hasClass("i")) {
+        $("#audio-errado")[0].play();
+        $("#modalFeedbackNegativa").modal("show");
+      }
     },
   });
+}
 
-  $(".btn-respostas-responsivo").on("click", mostrarTelaDeConferenciaReponsiva);
-  $(".btn-respostas-mobile").on("click", mostrarTelaDeConferenciaMobile);
+function avancarRodada() {
+  const rodadaAnterior = rodadaAtual;
+  rodadaAtual++;
+  acertosNaRodada = 0;
 
-  $(window).on("resize", handleResize);
-  handleResize();
+  console.log(
+    `Avançando para rodada ${rodadaAtual}. Escondendo rodada ${rodadaAnterior}`
+  );
+
+  $(`.rodada-${rodadaAnterior}`).fadeOut(400, function () {
+    $(`.rodada-${rodadaAnterior}`).addClass("d-none");
+
+    if (rodadaAtual > totalRodadas) {
+      setTimeout(() => {
+        $(".btn-doc").fadeOut();
+        setTimeout(() => {
+          $("#modalFimDoJogo").modal("show");
+        }, 500);
+      }, 500);
+    } else {
+      console.log(`Exibindo rodada ${rodadaAtual}`);
+      $(`.rodada-${rodadaAtual}`)
+        .removeClass("d-none")
+        .hide()
+        .fadeIn(() => {
+          ativarDragNosItensVisiveis();
+        });
+    }
+  });
+}
+
+function ativarDragNosItensVisiveis() {
+  $(".btn-doc:visible").draggable({
+    containment: ".tela-1",
+    scroll: false,
+    revert: function (dropValid) {
+      return dropValid && $(this).hasClass("c") ? false : true;
+    },
+  });
+}
+function abreResposta() {
+  $("#abre-resposta").on("click", function () {
+    $(".tela-1").addClass("d-none");
+    $(".tela-2").removeClass("d-none");
+  });
+}
+
+function escalaProporcao(largura, altura) {
+  var larguraScreen = $(window).width();
+  var alturaScreen = $(window).height();
+  var proporcaoAltura = (alturaScreen * 100) / altura;
+  var proporcaoLargura = (larguraScreen * 100) / largura;
+  var proporcao, larguraAltura, larguraAlturaAuto;
+
+  if (proporcaoAltura < proporcaoLargura) {
+    larguraAltura = "height";
+    larguraAlturaAuto = "width";
+    proporcao = proporcaoAltura / 100;
+  } else {
+    larguraAltura = "width";
+    larguraAlturaAuto = "height";
+    proporcao = proporcaoLargura / 100;
+  }
+
+  console.log(proporcao, proporcaoAltura, proporcaoLargura);
+  return [proporcao, larguraAltura, larguraAlturaAuto];
+}
+
+function resizeBodyConteudo() {
+  var proporcao1920 = escalaProporcao(1920, 1080)[0];
+
+  $(".conteudo").css({
+    transform: "scale(" + proporcao1920 + ")",
+    "transform-origin": "center center",
+  });
+
+  var proporcao900;
+
+  if ($(window).width() < 992) {
+    proporcao900 = escalaProporcao(900, 576)[0];
+  } else {
+    proporcao900 = 1;
+  }
+}
+
+$(window).on("load", function () {
   $("#modalIntroducao").modal("show");
 
-  function applyScale() {
-    const scale = Math.min($(window).width() / 1920, $(window).height() / 1080);
-    $(".tela-responsiva").css({
-      transform: `scale(${scale})`,
-      "transform-origin": "center center",
-    });
-  }
+  iniciarJogoDocumentos();
+  ativarDragNosItensVisiveis();
+  abreResposta();
 
-  function handleResize() {
-    const now = getLayout();
-
-    if (now === "mobile") {
-      $(".tela-responsiva").css("transform", "scale(1)");
-      $(".tela-mobile").removeClass("d-none");
-      $(".tela-responsiva").addClass("d-none");
-      $(".tela-2").addClass("d-none");
-    } else {
-      applyScale();
-      $(".tela-mobile").addClass("d-none");
-      $(".tela-resposta-mobile").addClass("d-none");
-      $(".tela-responsiva").removeClass("d-none");
-    }
-
-    if (!gameStarted && now !== layoutMode) resetGame();
-    layoutMode = now;
-  }
-})(jQuery);
+  resizeBodyConteudo();
+  $(window).resize(function () {
+    resizeBodyConteudo();
+  });
+});
