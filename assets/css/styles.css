@@ -1,8 +1,18 @@
+body {
+  overflow: hidden;
+}
+
 .body-game {
-  justify-content: center;
-  align-items: center;
-  padding: 0;
-  margin: 0;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.conteudo {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .textoFeedbackFinal {
@@ -76,7 +86,7 @@
 
 .zona-soltar-responsiva {
   width: 332.8px;
-  height: 285.4px;
+  height: auto;
   top: 506.7px;
   right: 542.9px;
 }
@@ -273,7 +283,7 @@
 /**********************************************************************/
 
 .p-paisagem {
-  color: #ffff;
+  color: white;
   text-align: center;
 }
 
@@ -281,6 +291,10 @@
   max-width: 70% !important;
   height: auto;
   display: block;
+}
+
+.modo-smart {
+  display: none;
 }
 
 @media only screen and (orientation: portrait) {
@@ -332,7 +346,7 @@
 
   .zona-soltar-responsiva {
     width: 154.2px;
-    height: 395.6px;
+    height: auto;
     top: 221.8px;
     right: 140px;
   }
@@ -504,7 +518,7 @@
 
   .zona-soltar-responsiva {
     width: 207.4px;
-    height: 395.6px;
+    height: auto;
     top: 322.1px;
     right: 263.4px;
   }
@@ -677,7 +691,7 @@
 
   .zona-soltar-responsiva {
     width: 207.4px;
-    height: 395.6px;
+    height: auto;
     top: 322.1px;
     right: 338.3px;
   }
