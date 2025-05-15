@@ -24,9 +24,9 @@ function iniciarJogoDocumentos() {
         acertosNaRodada++;
 
         if (!primeiraImagemAtualizada) {
-          $(".zona-soltar-responsiva").css(
-            "background-image",
-            "url('assets/img/pasta_docs.png')"
+          $(".zona-soltar-responsiva img").attr(
+            "src",
+            "assets/img/pasta_docs.png"
           );
           primeiraImagemAtualizada = true;
           console.log("Imagem da pasta atualizada para pasta_docs.png");
@@ -39,7 +39,7 @@ function iniciarJogoDocumentos() {
               setTimeout(() => {
                 $("#modalNovaRodada").modal("hide");
                 avancarRodada();
-              }, 9000);
+              }, 5000);
             }, 900);
           } else {
             setTimeout(() => {
@@ -102,43 +102,43 @@ function abreResposta() {
   });
 }
 
-function escalaProporcao(largura, altura) {
-  var larguraScreen = $(window).width();
-  var alturaScreen = $(window).height();
-  var proporcaoAltura = (alturaScreen * 100) / altura;
-  var proporcaoLargura = (larguraScreen * 100) / largura;
-  var proporcao, larguraAltura, larguraAlturaAuto;
+// function escalaProporcao(largura, altura) {
+//   var larguraScreen = $(window).width();
+//   var alturaScreen = $(window).height();
+//   var proporcaoAltura = (alturaScreen * 100) / altura;
+//   var proporcaoLargura = (larguraScreen * 100) / largura;
+//   var proporcao, larguraAltura, larguraAlturaAuto;
 
-  if (proporcaoAltura < proporcaoLargura) {
-    larguraAltura = "height";
-    larguraAlturaAuto = "width";
-    proporcao = proporcaoAltura / 100;
-  } else {
-    larguraAltura = "width";
-    larguraAlturaAuto = "height";
-    proporcao = proporcaoLargura / 100;
-  }
+//   if (proporcaoAltura < proporcaoLargura) {
+//     larguraAltura = "height";
+//     larguraAlturaAuto = "width";
+//     proporcao = proporcaoAltura / 100;
+//   } else {
+//     larguraAltura = "width";
+//     larguraAlturaAuto = "height";
+//     proporcao = proporcaoLargura / 100;
+//   }
 
-  console.log(proporcao, proporcaoAltura, proporcaoLargura);
-  return [proporcao, larguraAltura, larguraAlturaAuto];
-}
+//   console.log(proporcao, proporcaoAltura, proporcaoLargura);
+//   return [proporcao, larguraAltura, larguraAlturaAuto];
+// }
 
-function resizeBodyConteudo() {
-  var proporcao1920 = escalaProporcao(1920, 1080)[0];
+// function resizeBodyConteudo() {
+//   var proporcao1920 = escalaProporcao(1920, 1080)[0];
 
-  $(".conteudo").css({
-    transform: "scale(" + proporcao1920 + ")",
-    "transform-origin": "center center",
-  });
+//   $(".conteudo").css({
+//     transform: "scale(" + proporcao1920 + ")",
+//     "transform-origin": "center center",
+//   });
 
-  var proporcao900;
+//   var proporcao900;
 
-  if ($(window).width() < 992) {
-    proporcao900 = escalaProporcao(900, 576)[0];
-  } else {
-    proporcao900 = 1;
-  }
-}
+//   if ($(window).width() < 992) {
+//     proporcao900 = escalaProporcao(900, 576)[0];
+//   } else {
+//     proporcao900 = 1;
+//   }
+// }
 
 $(window).on("load", function () {
   $("#modalIntroducao").modal("show");
@@ -147,8 +147,8 @@ $(window).on("load", function () {
   ativarDragNosItensVisiveis();
   abreResposta();
 
-  resizeBodyConteudo();
-  $(window).resize(function () {
-    resizeBodyConteudo();
-  });
+  // resizeBodyConteudo();
+  // $(window).resize(function () {
+  //   resizeBodyConteudo();
+  // });
 });

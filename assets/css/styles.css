@@ -5,16 +5,6 @@
   margin: 0;
 }
 
-.conteudo {
-  width: 1920px;
-  height: 1080px;
-  position: fixed;
-  left: calc(50% - 1920px / 2);
-  top: calc(50% - 1080px / 2);
-  margin: auto;
-  overflow: hidden;
-}
-
 .textoFeedbackFinal {
   font-size: 23px;
   background-color: white;
@@ -47,7 +37,7 @@
 .body-modal-jogo {
   background-color: #f1f9fa;
   width: auto;
-  height: 274px;
+  height: 231.1px;
   border-radius: 10px;
 }
 
@@ -85,8 +75,6 @@
 }
 
 .zona-soltar-responsiva {
-  background-image: url(../img/pasta_vazia.png);
-  background-repeat: no-repeat;
   width: 332.8px;
   height: 285.4px;
   top: 506.7px;
@@ -313,32 +301,523 @@
   }
 }
 
+/**********************************************************************/
+/***************************** responsiva *****************************/
+/**********************************************************************/
 
-@media (max-width: 768px) {
-
-  .tela-1 .btn-doc {
-    transform: scale(1.4);
-    transform-origin: center center;
-    transition: transform 0.3s ease;
-    z-index: 2;
+@media (max-width: 959px) and (min-width: 480px) {
+  .area-respostas.position-absolute {
+    top: 20px;
+    left: 10px;
   }
 
-
-  .tela-1 .img-doc {
-    width: 120% !important;
-    height: auto;
+  .img-doc-final {
+    top: -4px;
+    left: 277.7px;
+    width: 144.1px;
   }
 
+  .p-resposta {
+    background-color: #bf3475;
+    width: 140px;
+    height: 103.4px;
+    text-align: center;
+    align-content: center;
+    padding: 1%;
+    color: white;
+    font-size: 1rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 20px;
+  }
 
   .zona-soltar-responsiva {
-    transform: scale(1.2);
-    background-size: contain;
-    transition: transform 0.3s ease;
+    width: 154.2px;
+    height: 395.6px;
+    top: 221.8px;
+    right: 140px;
   }
 
-  .img-bg {
-    object-fit: cover;
-    width: 100%;
-    height: auto;
+  .doc1 {
+    top: 50.2px;
+    left: 141.2px;
+    width: 145.3px;
+  }
+
+  .doc2 {
+    top: 48.9px;
+    left: 304.1px;
+    width: 142.2px;
+  }
+
+  .doc3 {
+    top: 67px;
+    left: 471.4px;
+    width: 121.5px;
+  }
+
+  .doc4 {
+    top: 206.6px;
+    left: 301.6px;
+    width: 119.7px;
+  }
+
+  .doc5 {
+    top: 211.2px;
+    left: 141.2px;
+    width: 119.7px;
+  }
+
+  .doc6 {
+    top: 57.6px;
+    left: 131.3px;
+    width: 126.8px;
+  }
+
+  .doc7 {
+    top: 48.9px;
+    left: 304.1px;
+    width: 123.5px;
+  }
+
+  .doc8 {
+    top: 67px;
+    left: 471.4px;
+    width: 124.2px;
+  }
+
+  .doc9 {
+    top: 206.6px;
+    left: 301.6px;
+    width: 124.9px;
+  }
+
+  .doc10 {
+    top: 211.2px;
+    left: 100.4px;
+    width: 137.2px;
+  }
+
+  .doc11 {
+    top: 57.2px;
+    left: 141.2px;
+    width: 120.2px;
+  }
+
+  .doc12 {
+    top: 48.9px;
+    left: 304.1px;
+    width: 123.7px;
+  }
+
+  .doc13 {
+    top: 67px;
+    left: 471.4px;
+    width: 141.5px;
+  }
+  .doc14 {
+    top: 206.6px;
+    left: 301.6px;
+    width: 119.7px;
+  }
+
+  .doc15 {
+    top: 211.2px;
+    left: 141.2px;
+    width: 119.7px;
+  }
+
+  .res-1 {
+    top: 117px;
+    left: 5px;
+  }
+
+  .res-2 {
+    top: 117px;
+    left: 154.3px;
+  }
+
+  .res-3 {
+    left: 300.1px;
+    top: 117px;
+  }
+
+  .res-4 {
+    top: 117px;
+    left: 448.2px;
+  }
+
+  .res-5 {
+    top: 117px;
+    left: 594.6px;
+  }
+
+  .res-6 {
+    left: 6.1px;
+    top: 225.6px;
+  }
+
+  .res-7 {
+    top: 225.6px;
+    left: 154.3px;
+  }
+
+  .res-8 {
+    left: 300.1px;
+    top: 225.6px;
+  }
+
+  .res-9 {
+    top: 225.6px;
+    left: 448.2px;
+  }
+
+  .res-10 {
+    top: 225.6px;
+    left: 594.6px;
+  }
+}
+
+@media (max-width: 1279px) and (min-width: 960px) {
+  .area-respostas.position-absolute {
+    top: 20px;
+    left: 10px;
+  }
+
+  .img-doc-final {
+    top: 33.3px;
+    left: 424.1px;
+    width: 191.8px;
+  }
+
+  .p-resposta {
+    background-color: #bf3475;
+    width: 196.3px;
+    height: 93.9px;
+    text-align: center;
+    align-content: center;
+    padding: 1%;
+    color: white;
+    font-size: 1rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 20px;
+  }
+
+  .zona-soltar-responsiva {
+    width: 207.4px;
+    height: 395.6px;
+    top: 322.1px;
+    right: 263.4px;
+  }
+
+  .doc1 {
+    top: 111.1px;
+    left: 201.7px;
+    width: 174.6px;
+  }
+
+  .doc2 {
+    top: 92.9px;
+    left: 387.4px;
+    width: 166.2px;
+  }
+
+  .doc3 {
+    top: 108.5px;
+    left: 568.3px;
+    width: 146px;
+  }
+
+  .doc4 {
+    top: 325.7px;
+    left: 415.9px;
+    width: 149.7px;
+  }
+
+  .doc5 {
+    top: 305.1px;
+    left: 228.2px;
+    width: 142px;
+  }
+
+  .doc6 {
+    top: 111.1px;
+    left: 201.7px;
+    width: 149.1px;
+  }
+
+  .doc7 {
+    top: 92.9px;
+    left: 371.3px;
+    width: 145px;
+  }
+
+  .doc8 {
+    top: 108.5px;
+    left: 568.3px;
+    width: 152.2px;
+  }
+
+  .doc9 {
+    top: 325.7px;
+    left: 415.9px;
+    width: 149.7px;
+  }
+
+  .doc10 {
+    top: 305.1px;
+    left: 228.2px;
+    width: 162.8px;
+  }
+
+  .doc11 {
+    top: 111.1px;
+    left: 201.7px;
+    width: 144.2px;
+  }
+
+  .doc12 {
+    top: 92.9px;
+    left: 371.3px;
+    width: 145px;
+  }
+
+  .doc13 {
+    top: 108.5px;
+    left: 568.3px;
+    width: 174.1px;
+  }
+
+  .doc14 {
+    top: 325.7px;
+    left: 415.9px;
+    width: 141.2px;
+  }
+
+  .doc15 {
+    top: 305.1px;
+    left: 228.2px;
+    width: 150.7px;
+  }
+
+  .res-1 {
+    top: 216px;
+    left: 10.8px;
+  }
+
+  .res-2 {
+    top: 216px;
+    left: 219.5px;
+  }
+
+  .res-3 {
+    top: 216px;
+    left: 429.3px;
+  }
+
+  .res-4 {
+    top: 216px;
+    left: 638.7px;
+  }
+
+  .res-5 {
+    top: 216px;
+    left: 848.4px;
+  }
+
+  .res-6 {
+    left: 10.8px;
+    top: 325.2px;
+  }
+
+  .res-7 {
+    top: 325px;
+    left: 219.5px;
+  }
+
+  .res-8 {
+    top: 325px;
+    left: 429.3px;
+  }
+
+  .res-9 {
+    top: 325px;
+    left: 638.7px;
+  }
+
+  .res-10 {
+    top: 325px;
+    left: 848.4px;
+  }
+}
+
+@media (max-width: 1600px) and (min-width: 1280px) {
+  .area-respostas.position-absolute {
+    top: 20px;
+    left: 10px;
+  }
+
+  .img-doc-final {
+    top: 129.6px;
+    left: 544.7px;
+    width: 250.3px;
+  }
+
+  .p-resposta {
+    background-color: #bf3475;
+    width: 196.3px;
+    height: 93.9px;
+    text-align: center;
+    align-content: center;
+    padding: 1%;
+    color: white;
+    font-size: 1rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 20px;
+  }
+
+  .zona-soltar-responsiva {
+    width: 207.4px;
+    height: 395.6px;
+    top: 322.1px;
+    right: 338.3px;
+  }
+
+  .doc1 {
+    top: 107.6px;
+    left: 339.8px;
+    width: 161.6px;
+  }
+
+  .doc2 {
+    top: 98.4px;
+    left: 528px;
+    width: 159.3px;
+  }
+
+  .doc3 {
+    top: 111.9px;
+    left: 751.6px;
+    width: 139.7px;
+  }
+
+  .doc4 {
+    top: 314.8px;
+    left: 544.6px;
+    width: 138.9px;
+  }
+
+  .doc5 {
+    top: 300.9px;
+    left: 343.5px;
+    width: 137.4px;
+  }
+
+  .doc6 {
+    top: 107.6px;
+    left: 339.8px;
+    width: 155.7px;
+  }
+
+  .doc7 {
+    top: 98.4px;
+    left: 528px;
+    width: 148.8px;
+  }
+
+  .doc8 {
+    top: 111.9px;
+    left: 751.6px;
+    width: 157px;
+  }
+
+  .doc9 {
+    top: 314.8px;
+    left: 544.6px;
+    width: 152px;
+  }
+
+  .doc10 {
+    top: 300.9px;
+    left: 343.5px;
+    width: 167.7px;
+  }
+
+  .doc11 {
+    top: 107.6px;
+    left: 339.8px;
+    width: 147.1px;
+  }
+
+  .doc12 {
+    top: 98.4px;
+    left: 528px;
+    width: 148.7px;
+  }
+
+  .doc13 {
+    top: 111.9px;
+    left: 751.6px;
+    width: 171.8px;
+  }
+
+  .doc14 {
+    top: 314.8px;
+    left: 544.6px;
+    width: 146.9px;
+  }
+
+  .doc15 {
+    top: 300.9px;
+    left: 343.5px;
+    width: 150.2px;
+  }
+
+  .res-1 {
+    top: 398px;
+    left: 174.2px;
+  }
+
+  .res-2 {
+    top: 398px;
+    left: 386.3px;
+  }
+
+  .res-3 {
+    top: 398px;
+    left: 595.5px;
+  }
+
+  .res-4 {
+    top: 398px;
+    left: 805.8px;
+  }
+
+  .res-5 {
+    top: 398px;
+    left: 1016.7px;
+  }
+
+  .res-6 {
+    left: 174.2px;
+    top: 524px;
+  }
+
+  .res-7 {
+    top: 524px;
+    left: 386.3px;
+  }
+  .res-8 {
+    top: 524px;
+    left: 595.5px;
+  }
+
+  .res-9 {
+    top: 524px;
+    left: 805.8px;
+  }
+
+  .res-10 {
+    top: 524px;
+    left: 1016.7px;
   }
 }
